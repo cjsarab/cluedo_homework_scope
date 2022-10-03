@@ -162,3 +162,17 @@ const verdict = declareWeapon();
 console.log(verdict);
 
 // Weapon = candlestick because the changescenario function calls plot twist before unexpected outcome, resulting in a truthy unexpected outcome
+
+let murderer = 'Professor Plum';
+
+if (murderer === 'Professor Plum') {
+let murderer = 'Mrs. Peacock';
+}
+
+const declareMurderer = function() {
+return `The murderer is ${murderer}.`;
+}
+
+const verdict = declareMurderer();
+console.log(verdict);
+// Mrs Peacock is a local variable. Therefore the murderer is Plum
