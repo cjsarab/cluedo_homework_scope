@@ -2,7 +2,7 @@ const scenario = {
     murderer: 'Miss Scarlet',
     room: 'Library',
     weapon: 'Rope'
-    };
+};
 
 const declareMurderer = function() {
     return `The murderer is ${scenario.murderer}.`;
@@ -10,5 +10,49 @@ const declareMurderer = function() {
 
 const verdict = declareMurderer();
 console.log(verdict);
-
 // The output will show that the murderer is Miss Scarlett because she is the scenario.murderer
+
+const murderer = 'Professor Plum';
+
+const changeMurderer = function() {
+murderer = 'Mrs. Peacock';
+}
+
+const declareMurderer = function() {
+return `The murderer is ${murderer}.`;
+}
+
+changeMurderer();
+const verdict = declareMurderer();
+console.log(verdict);
+// There will be an error - murderer has already been declared with a const as Professor Plum and cannot be changed to Mrs. Peacock
+
+let murderer = 'Professor Plum';
+
+const declareMurderer = function() {
+let murderer = 'Mrs. Peacock';
+return `The murderer is ${murderer}.`;
+}
+
+const firstVerdict = declareMurderer();
+console.log('First Verdict: ', firstVerdict);
+
+const secondVerdict = `The murderer is ${murderer}.`;
+console.log('Second Verdict: ', secondVerdict);
+// The first verdict will show Mrs Peacock
+// The second verdict will show Prof Plum
+
+let suspectOne = 'Miss Scarlet';
+let suspectTwo = 'Professor Plum';
+let suspectThree = 'Mrs. Peacock';
+
+const declareAllSuspects = function() {
+let suspectThree = 'Colonel Mustard';
+return `The suspects are ${suspectOne}, ${suspectTwo}, ${suspectThree}.`;
+}
+
+const suspects = declareAllSuspects();
+console.log(suspects);
+console.log(`Suspect three is ${suspectThree}.`);
+// The console will print Mustard instead of Peacock
+// The console will print Peacock
